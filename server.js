@@ -14,12 +14,10 @@ db.sequelize.sync({force: true}).then(() => {
 
 let router = require('./app/routers/router.js');
 let employee = require('./app/routers/employee.router.js');
-
 let room = require('./app/routers/room.router.js');
-
 let reservation = require('./app/routers/reservation.router.js');
-
 let book = require('./app/routers/book.router.js');
+let prestamoRouter = require('./app/routers/prestamo.router.js');
 
 const cors = require('cors')
 const corsOptions = {
@@ -36,6 +34,7 @@ app.use('/', employee);
 app.use('/', room);
 app.use('/', reservation);
 app.use('/', book);
+app.use('/', prestamoRouter);
 
 app.get("/",(req,res) => {
   
