@@ -18,6 +18,10 @@ let room = require('./app/routers/room.router.js');
 let reservation = require('./app/routers/reservation.router.js');
 let book = require('./app/routers/book.router.js');
 let prestamoRouter = require('./app/routers/prestamo.router.js');
+let cuenta = require('./app/routers/cuenta.router.js');
+let transaccion = require('./app/routers/transaccion.router.js');
+let control = require('./app/routers/control.router.js');
+
 
 const cors = require('cors')
 const corsOptions = {
@@ -30,11 +34,13 @@ app.use(bodyParser.json());
 
 app.use('/', router);
 app.use('/', employee);
-
+app.use('/', cuenta);
 app.use('/', room);
 app.use('/', reservation);
 app.use('/', book);
 app.use('/', prestamoRouter);
+app.use('/', transaccion);
+app.use('/', control);
 
 app.get("/",(req,res) => {
   
